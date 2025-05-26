@@ -1,0 +1,78 @@
+
+PyTest.ipynb
+PyTest.ipynb_
+
+[ ]
+!pip install nltk
+import pandas as pd
+import numpy as np
+Requirement already satisfied: nltk in /usr/local/lib/python3.11/dist-packages (3.9.1)
+Requirement already satisfied: click in /usr/local/lib/python3.11/dist-packages (from nltk) (8.2.0)
+Requirement already satisfied: joblib in /usr/local/lib/python3.11/dist-packages (from nltk) (1.5.0)
+Requirement already satisfied: regex>=2021.8.3 in /usr/local/lib/python3.11/dist-packages (from nltk) (2024.11.6)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.11/dist-packages (from nltk) (4.67.1)
+First load pandas library for working with datasets. Setting the pandas library as "pd" for short and ease of use
+
+
+[ ]
+from google.colab import files
+uploaded = files.upload()
+
+Using the code to import a file. and uploading it to google colab to use the data set.
+
+
+[ ]
+df = pd.read_csv('twitter_stock_market.csv', sep=';', encoding='utf-8')
+Making pandas read the csv dataset. And abbreviating it to "df" in short for dataframe for ease of use.
+
+
+[ ]
+df.head()
+
+Using df.head() to call 5 first lines of row. And to show what the 5 first row of data looks like.
+
+
+[ ]
+df.shape
+(5000, 4)
+Using df.shape to show how many rows and columns.
+
+
+[ ]
+df.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 5000 entries, 0 to 4999
+Data columns (total 4 columns):
+ #   Column      Non-Null Count  Dtype 
+---  ------      --------------  ----- 
+ 0   id          5000 non-null   int64 
+ 1   created_at  5000 non-null   object
+ 2   text        5000 non-null   object
+ 3   sentiment   1300 non-null   object
+dtypes: int64(1), object(3)
+memory usage: 156.4+ KB
+Using df.info() to show how many entries per column. And showing what type of data is accepted.
+
+
+[ ]
+df.columns
+Index(['id', 'created_at', 'text', 'sentiment'], dtype='object')
+Using df.columns to show the "headings" of each entry for the rows. Showing the title of each column of what is important for the analysis, which in this case the text and sentiment column
+
+Downloaded from Kaggle: Twitter Stock Market Sentiment Dataset The dataset includes 5000 rows of data samples, where the dataset is sourced from tweets of the old social media "Twitter", and the categories of the sentiments are the usual "positive, negative, and neutral"
+
+References https://colab.research.google.com/drive/1LZMiI5nr7BP68kdLBo6yjBo5bT5OpXVQ?authuser=3#scrollTo=Q5cyxU8oipSl
+
+https://stackoverflow.com/questions/47430544/load-xlsx-file-from-drive-in-colaboratory
+
+https://www.w3schools.com/python/pandas/pandas_csv.asp
+
+https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis?resource=download
+
+https://www.kaggle.com/datasets/utkarshxy/stock-markettweets-lexicon-data
+
+
+[ ]
+
+Start coding or generate with AI.
+Colab paid products - Cancel contracts here
