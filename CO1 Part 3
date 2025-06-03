@@ -1,0 +1,26 @@
+
+
+#Calculate Accuracy and Generate Classification Report
+from sklearn.metrics import accuracy_score, classification_report
+y_pred = lr_model.predict(X_test_tfidf)
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.4f}")
+print("\nClassification Report:")
+print(classification_report(y_test, y_pred))
+
+
+
+#Create and Visualize Confusion Matrix 
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
+plt.figure(figsize=(8, 6))
+sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+xticklabels=lr_model.classes_,
+yticklabels=lr_model.classes_)
+plt.xlabel('Predicted')
+plt.ylabel('True')
+plt.title('Confusion Matrix')
+plt.show()
+
