@@ -8,6 +8,17 @@ print(f"Accuracy: {accuracy:.4f}")
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 
+The first line of code imports, two evaluation functions from scikit-learn. To measure how often the model predicted correctly, and provide detailed breakdown of model performance per class.
+
+The second line of code uses trained Logistic Regression model. To predict labels for the test dataset.
+
+The third line of code compares predicted labels with actual true labels. To calculate overall accuracy, which is the ratio of correct predictions to total predictions.
+
+The fourth line of code prints accuracy score with a format of 4 decimal places. To help understand how the model performed.
+
+The fifth line of code prints a heading label. For readability.
+
+The sixth line of code displays a classification report. Includes Precision, Recall, F1-score, Support, To evaluate how the model performs for each class.
 
 
 #Create and Visualize Confusion Matrix 
