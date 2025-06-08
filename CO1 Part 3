@@ -35,3 +35,36 @@ plt.ylabel('True')
 plt.title('Confusion Matrix')
 plt.show()
 
+
+The first line of code imports matplotlib.pyplot as plt for ease of use. To use for general plotting.
+
+The second line of code imports seaborn as sns for ease of use. To use for convenient statistical plots.
+
+The third line of code imports confusion_matrix. For creating matrix comparing true labels to predicted labels.
+
+The fourth line of code creates the confusion matrix using actual and predicted labels. This returns a 2D array of rows which are actual labels, and columns which are predicted labels, To show how many items were classified in to each category.
+
+The fifth line of code creates a new plot with a specified figure size of 8 by 6 units tall. To ensure the matrix is visible.
+
+The sixth line of code draws a heatmap of the confusion matrix. To draw a heatmap that shows the data, numbers in each cell, formats numbers as integers, to use a blue color gradient, set axis labels to match class names.
+
+The seventh line of code labels x axis as predicted. To provide clarity.
+
+The eighth line of code labels y axis as true. To provide clarity.
+
+The ninth line of code adds a title above the heatmap. To provide a label of identification of the figure.
+
+The tenth line of code displays the finished plot. To make the chart visible.
+
+
+
+Overall for the accuracy is 73.5%, that it predicted 735 out of 1000 samples. For the classification report the model favors natural and positive classes, but struggles with identifying negative sentiments, Especially due to low recall. This imbalance highlights a significant area for improvement. For the matrix only 49 out of 169 actual negative samples were correctly classified, 52 negative samples predicted neutral, 68 incorrectly predicted positive, 414 of 465 for positive samples are correctly predicted, Neutral samples predicted correctly with 273, and 91 are mistakenly predicted as positive.
+
+The strengths and weakness of the model are positive sentiment detection is strong, a recall of 0.89 and F1-score of 0.80, that shows the model is good at identifying positive texts. Neutral class with a precision and recall 0.74.
+
+For the weaknesses the Negative class recall is low 0.29, which it fails to recognize negative sentiments. And the F1-score for negative is 0.44 which is lowest, that signals the class as underrepresented or misclassified significantly.
+
+Some factors that affect model performance are Dataset Quality and Balance, which fewer "negative" samples causes the model to underperform on the class. Preprocessing choices, some methods that may remove important context-bearing words. Model limitations, where Logistic Regression as a linear model, that struggles with non-linear sentiment expression (like sarcasm or idioms), No context, where it does not consider sequence or context. And lastly Feature Representation, TF-IDF may treat words independent, and ignoring semantics and syntax, which is important for sentiment detection.
+
+
+Some potential improvements can be is to work on class balance or reweighing, where the model struggles with negative class, due to class imbalance or slight difference in sentiment language, applying class weights or resampling techniques. Another is enhancing text representation, where other methods can capture nuanced sentiment context better.
